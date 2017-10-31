@@ -1,19 +1,19 @@
 {
-  "name": "ide-php",
+  "name": "ide-ruby",
   "main": "./lib/main",
-  "version": "0.6.9",
-  "description": "PHP language support for Atom-IDE",
-  "repository": "https://github.com/atom/ide-php",
+  "version": "0.0.1",
+  "description": "Ruby language support for Atom-IDE",
+  "repository": "https://github.com/yottanami/ide-ruby",
   "license": "MIT",
   "engines": {
     "atom": ">=1.21.0"
   },
   "configSchema": {
-    "phpPath": {
-      "title": "PHP Path",
+    "rubyPath": {
+      "title": "Ruby Path",
       "type": "string",
       "default": "",
-      "description": "Absolute path to your PHP 7 binary (e.g. `/usr/local/bin/php`) if not in PATH or PHP_HOME. This is used to launch the PHP language server."
+      "description": "Absolute path to your ruby binary (e.g. `/usr/local/bin/ruby`) if not in PATH or Ruby_HOME. This is used to launch the Ruby language server."
     },
     "memoryLimit": {
       "title": "Memory Limit",
@@ -30,12 +30,8 @@
         "stdio"
       ],
       "default": "auto",
-      "description": "The connection type for communicating with the local PHP language server. 'auto' will use 'socket' on Windows, 'stdio' on other platforms."
+      "description": "The connection type for communicating with the local  language server. 'auto' will use 'socket' on Windows, 'stdio' on other platforms."
     }
-  },
-  "scripts": {
-    "server-install": "rm -rf vendor && composer install --prefer-dist --no-dev && composer dump-autoload --optimize",
-    "server-package": "7z a temp.tar vendor\\* && 7z a php-ls-x.y.z.tar.gz temp.tar && rm -f temp.tar"
   },
   "atomTestRunner": "./test/runner",
   "dependencies": {
@@ -43,7 +39,7 @@
     "decompress": "^4.2.0"
   },
   "enhancedScopes": [
-    "text.html.php"
+    "text.html.ruby"
   ],
   "consumedServices": {
     "linter-indie": {
